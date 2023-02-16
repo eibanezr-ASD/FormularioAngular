@@ -1,0 +1,26 @@
+.input-col {
+  position: relative;
+}
+.msj-error {
+  margin: 5px;
+  padding: 2px;
+  display: inline-block;
+  background-color: #fff;
+  border: 1px solid red;
+  border-radius: 10px;
+  font-size: 10px;
+  bottom: 0;
+  left: 0;
+  color: rgb(145, 23, 23);
+  opacity: 0;
+  &.invalid {
+    opacity: 1;
+  }
+}
+
+.form-control {
+  border-color: aqua;
+  &.invalid{
+    border-color: red;
+  }
+}

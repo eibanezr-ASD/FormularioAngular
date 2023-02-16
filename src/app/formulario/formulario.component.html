@@ -1,0 +1,78 @@
+<p>formulario works!</p>
+
+<form (ngSubmit)="onRegister()" #formRegister="ngForm">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 input-col">
+        <label for="name"
+          >Nombre
+          <input
+            class="form-control"
+            [ngClass]="{ invalid: nombre.invalid }"
+            type="text"
+            required
+            [(ngModel)]="registro.nombre"
+            name="nombre"
+            #nombre="ngModel"
+            id="nombre"
+          />
+        </label>
+        <span
+          class="msj-error"
+          [ngClass]="{ valid: nombre.valid, invalid: nombre.invalid }"
+          >El campo apellido es requerido</span
+        >
+      </div>
+      <div class="col-6 input-col">
+        <label for="last-name"
+          >Apellido
+          <input
+            class="form-control"
+            [ngClass]="{ invalid: apellido.invalid }"
+            type="text"
+            required
+            [(ngModel)]="registro.apellido"
+            name="apellido"
+            #apellido="ngModel"
+          />
+        </label>
+        <span
+          class="msj-error"
+          [ngClass]="{ valid: apellido.valid, invalid: apellido.invalid }"
+          >El campo apellido es requerido</span
+        >
+      </div>
+      <div class="col-6 input-col">
+        <label for="last-name"
+          >Fecha
+          <input
+            class="form-control"
+            [ngClass]="{ invalid: fecha.invalid }"
+            type="date"
+            required
+            [(ngModel)]="registro.fecha"
+            name="fecha"
+            #fecha="ngModel"
+          />
+        </label>
+        <span
+          class="msj-error"
+          [ngClass]="{ valid: fecha.valid, invalid: fecha.invalid }"
+          >El campo fecha es requerido</span
+        >
+      </div>
+      <div class="col-12">
+        <button
+          class="btn btn-primary"
+          [disabled]="formRegister.invalid"
+          type="submit"
+        >
+          Registrar
+        </button>
+      </div>
+    </div>
+    <p>{{ registro.nombre }}</p>
+    <p>{{ registro.apellido }}</p>
+    <p>{{ registro.fecha }}</p>
+  </div>
+</form>
